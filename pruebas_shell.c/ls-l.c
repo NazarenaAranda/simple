@@ -18,8 +18,8 @@ int main(char *s, int length)
 	   {
 		    printf("shell$ ");
 		    texto = getline(&buffer,&bufsize,stdin);
-		    char *argv[] = {"/bin/ls", "-l", "/tmp", NULL};
-		    if (execve(argv[0], argv, NULL) == -1)
+		    char *argv[] = {"/bin/ls", "argv", NULL};
+		    if (execve(NULL, argv, NULL) == -1)
 		    {
 			    perror("Error:");
 		    }
