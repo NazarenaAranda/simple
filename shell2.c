@@ -21,7 +21,7 @@ int main()
 		char *args[TOKEN_LIMIT];
 		int numTokens;
 
-		printf("$ "); //muestra la shell en la pantalla
+		printf("$ "); //Promp muestra la shell en la pantalla
 		getline(&input,&bufsize,stdin);//guarda en "input" lo que recibe del usuario
 
 		char * tokens[TOKEN_LIMIT]; //TOKEN_LIMIT esta dentro de tokens
@@ -46,7 +46,9 @@ void cd(char* args[]){
 	}
 }
 
-void executeCommand(char* args[]){
+void executeCommand(char* args[])
+{
+	extern char **environ;
 	int pid = fork();
 
 	if(pid==-1){
@@ -55,7 +57,7 @@ void executeCommand(char* args[]){
 	}
 
 	if(pid==0){
-		if (execvp(args[0],args)==-1){
+		if (execve("/bin"args[0],args,environ)==-1){
 			printf("Command not found");
 			kill(getpid(),SIGTERM);  //SIGTERM es laSeñal que se envía el proceso para comunicarle un apagado “amable” (cerrando conexiones, ficheros y limpiando sus propios búfer).
 		}

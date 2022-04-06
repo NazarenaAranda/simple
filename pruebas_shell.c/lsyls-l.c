@@ -11,17 +11,17 @@ int main(char *s, int length)
 
     int padre;
     int padre2;
-    padre = fork();
-    padre2 = fork();
 
     for (;;)
     {
+	    padre = fork();
+	    padre2 = fork();
             if (padre == 0)
            {
                     printf("shell$ ");
                     texto = getline(&buffer,&bufsize,stdin);
-		    char *argv[] = {"/bin/ls", "./", NULL};
-                    if (execve(argv[0], argv, NULL) == -1 )
+		    char *argv[] = {"/bin/ls", "-l", "./", NULL};
+                    if (execve(argv[0], argv2, NULL) == -1 )
                     {
                             perror("Error:");
                     } 
@@ -29,11 +29,9 @@ int main(char *s, int length)
             }
 	    else if (padre2 == 0)
            {
-		    wait(NULL);
-                    printf("shell$ ");
                     texto = getline(&buffer,&bufsize,stdin);
-                    char *argv2[] = {"/bin/ls", "-l", "./", NULL};
-                    if (execve(argv2[0], argv2, NULL) == -1 )
+                    char *argv[] = {"/bin/ls", "./", NULL};
+                    if (execve(argv[0], argv, NULL) == -1 )
                     {
                             perror("Error:");
                     }
@@ -42,9 +40,6 @@ int main(char *s, int length)
             else
             {
                     wait(NULL);
-                    printf("shell$ ");
-                    texto = getline(&buffer,&bufsize,stdin);
-                    char *argv[] = {"/bin/ls", "-l", "./", NULL};
 			
             }
             continue;
