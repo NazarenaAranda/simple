@@ -54,7 +54,7 @@ void executeCommand(char* args[])
 
 	if(pid == -1)
 	{
-		write(STDOUT_FILENO,"Error creating process\n", 23);
+		printf("Error creating process\n");
 		return;
 	}
 
