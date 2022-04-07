@@ -20,9 +20,18 @@ int main()
 		char *command;
 		char *args[TOKEN_LIMIT];
 		int numTokens;
+		ssize_t guardar;
 
-		printf("$ "); //Promp muestra la shell en la pantalla
-		getline(&input,&bufsize,stdin);//guarda en "input" lo que recibe del usuario
+
+		printf("#cisfun$ "); //Promp muestra la shell en la pantalla
+		guardar = getline(&input,&bufsize,stdin);//guarda en "input" lo que recibe del usuario
+
+		if (guardar == -1)
+		{
+			printf("\n");
+			return (-1);
+		}
+	
 
 		char * tokens[TOKEN_LIMIT]; //TOKEN_LIMIT esta dentro de tokens
 
@@ -50,6 +59,9 @@ void executeCommand(char* args[])
 {
 	extern char **environ;
 	int pid = fork();
+	/*char* bin = "bin";
+
+	strcat(bin,args2[0]);*/
 
 	if(pid==-1){
 		printf("Error creating process\n");
@@ -57,7 +69,7 @@ void executeCommand(char* args[])
 	}
 
 	if(pid==0){
-		if (execve("/bin"args[0],args,environ)==-1){
+		if (execve(args[0],args,environ)==-1){
 			printf("Command not found");
 			kill(getpid(),SIGTERM);  //SIGTERM es laSeñal que se envía el proceso para comunicarle un apagado “amable” (cerrando conexiones, ficheros y limpiando sus propios búfer).
 		}
