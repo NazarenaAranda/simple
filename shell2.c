@@ -4,14 +4,14 @@ int main()
 {
 	while(1)
 	{
-		size_t read_bytes;
 		size_t bufsize = 0;
 		char *input = NULL;
-		char *command;
 		char *args[TOKEN_LIMIT];
 		int numTokens;
 		ssize_t save;
 		char * tokens[TOKEN_LIMIT]; //TOKEN_LIMIT esta dentro de tokens
+
+		executeCommand(args);
 
 
 		write(STDOUT_FILENO, "#cisfun$ ", 9); //Promp muestra la shell en la pantalla
@@ -34,9 +34,7 @@ int main()
 		if(!strcmp("exit", args[0])) break;
 		if(!strcmp("cd", args[0])) cd(args);
 
-		executeCommand(args);
 	}
-	
 	return (0);
 }
 void executeCommand(char* args[])
@@ -45,11 +43,7 @@ void executeCommand(char* args[])
 	pid_t pid;
         pid = fork();
 
-	int _strcmp(char *s1, char *s2)
-	{
-		s1 = "/bin/";
-		s2 = args[0];
-	}
+
 
 
 	if(pid == -1)
