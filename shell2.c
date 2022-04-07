@@ -59,7 +59,6 @@ void cd(char* args[]){
 }
 
 void executeCommand(char* args[])
-char *str_concat(char *s1, char *s2);
 {
 	extern char **environ;
 	pid_t pid;
