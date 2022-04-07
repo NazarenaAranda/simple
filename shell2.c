@@ -4,6 +4,7 @@
 #include <string.h>
 #include <sys/wait.h>
 #include <signal.h>
+#include <sys/types.h>
 
 #define TOKEN_LIMIT 100 //los token son los argumentos que van despues del espacio
 
@@ -20,13 +21,13 @@ int main()
 		char *command;
 		char *args[TOKEN_LIMIT];
 		int numTokens;
-		ssize_t guardar;
+		ssize_t save;
 
 
 		printf("#cisfun$ "); //Promp muestra la shell en la pantalla
-		guardar = getline(&input,&bufsize,stdin);//guarda en "input" lo que recibe del usuario
+		save = getline(&input,&bufsize,stdin);//guarda en "input" lo que recibe del usuario
 
-		if (guardar == -1)
+		if (save == -1)
 		{
 			printf("\n");
 			return (-1);
@@ -50,7 +51,8 @@ int main()
 }
 
 void cd(char* args[]){
-	if (chdir(args[1]) == -1) {
+	if (chdir(args[1]) == -1)
+       	{
 		printf("Directory %s not found\n", args[1]);
 	}
 }
@@ -58,17 +60,18 @@ void cd(char* args[]){
 void executeCommand(char* args[])
 {
 	extern char **environ;
-	int pid = fork();
-	/*char* bin = "bin";
+	pid_t pid;
+        pid = fork();
 
-	strcat(bin,args2[0]);*/
 
-	if(pid==-1){
+	if(pid == -1)
+	{
 		printf("Error creating process\n");
 		return;
 	}
 
-	if(pid==0){
+	if(pid==0)
+	{
 		if (execve(args[0],args,environ)==-1){
 			printf("Command not found");
 			kill(getpid(),SIGTERM);  //SIGTERM es laSeñal que se envía el proceso para comunicarle un apagado “amable” (cerrando conexiones, ficheros y limpiando sus propios búfer).
