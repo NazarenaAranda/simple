@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
 /**
 * str_concat - concatenate string
 * @s1: string 1
