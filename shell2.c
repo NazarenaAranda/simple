@@ -23,17 +23,23 @@ int main()
 		numTokens = 1;
 		while((args[numTokens] = strtok(NULL, " \n")) != NULL) numTokens++;
 
-		if(!strcmp("exit", args[0])) break;
+		if(!strcmp("exit", args[0]))break;
 		if(!strcmp("cd", args[0])) cd(args);
 		executeCommand(args);
 	}
 	return (0);
 }
+char *getenv(char *name)
+{
+	name = getenv("PATH");
+	str_concat(args[0], name);
+
 void executeCommand(char* args[])
 {
 	extern char **environ;
 	pid_t pid;
         pid = fork();
+
 	
 	if(pid == -1)
 	{
@@ -49,4 +55,5 @@ void executeCommand(char* args[])
 		}	//SIGTERM es laSeñal que se envía el proceso para comunicarle un apagado “amable” (cerrando conexiones, ficheros y limpiando sus propios búfer).
 	}
 	waitpid(pid,NULL,0);
-}	//suspende la ejecución del proceso de llamada hasta que un hijo especificado por el argumento pid haya cambiado de estado. Ejemplo: waitpid(-valor del pid-, &status, 0)
+}
+}
