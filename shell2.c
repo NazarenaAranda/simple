@@ -33,7 +33,6 @@ int main()
 
 void executeCommand(char* args[])
 {
-	extern char **environ;
 	pid_t pid;
         pid = fork();
 
