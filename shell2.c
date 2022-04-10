@@ -23,16 +23,13 @@ int main()
 		numTokens = 1;
 		while((args[numTokens] = strtok(NULL, " \n")) != NULL) numTokens++;
 
-		if(!strcmp("exit", args[0]))break;
-		if(!strcmp("cd", args[0])) cd(args);
+		if(!_strcmp("exit", args[0]))break;
+		if(!_strcmp("cd", args[0])) cd(args);
 		executeCommand(args);
 	}
 	return (0);
 }
-char *getenv(char *name)
-{
-	name = getenv("PATH");
-	str_concat(args[0], name);
+
 
 void executeCommand(char* args[])
 {
@@ -40,7 +37,6 @@ void executeCommand(char* args[])
 	pid_t pid;
         pid = fork();
 
-	
 	if(pid == -1)
 	{
 		printf("Error creating process\n");
@@ -55,5 +51,4 @@ void executeCommand(char* args[])
 		}	//SIGTERM es laSeñal que se envía el proceso para comunicarle un apagado “amable” (cerrando conexiones, ficheros y limpiando sus propios búfer).
 	}
 	waitpid(pid,NULL,0);
-}
 }
