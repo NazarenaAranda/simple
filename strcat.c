@@ -6,7 +6,7 @@
 * Return: resultado
 */
 
-char *str_concat(char *s1, char *s2)
+char *str_cat(char *s1, char *s2)
 {
 	char *result;
 	int long1, long2, a = 0, b = 0;

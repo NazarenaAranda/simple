@@ -43,7 +43,11 @@ void executeCommand(char* args[])
 	}
 	if(pid==0)
 	{
-		if (execve(args[0],args,environ)==-1)
+		if (strncmp(*args, "./", 2) != 0 && strncmp(*args, "/", 1) != 0)
+		{
+			_path(args);
+		}
+		if (execve(*args,args,environ)==-1)
 		{
 			printf("Command not found");
 			kill(getpid(),SIGTERM); 
