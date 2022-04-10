@@ -6,7 +6,9 @@
 #include <string.h>
 #include <sys/wait.h>
 #include <signal.h>
-#define TOKEN_LIMIT 100
+#include <sys/types.h>
+
+#define TOKEN_LIMIT 1024
 
 void cd(char* args[]);
 void executeCommand(char* args[]);

@@ -6,7 +6,7 @@
 #include <signal.h>
 #include <sys/types.h>
 
-#define TOKEN_LIMIT 100 //los token son los argumentos que van despues del espacio
+#define TOKEN_LIMIT 1024 //los token son los argumentos que van despues del espacio
 
 void cd(char* args[]);
 void executeCommand(char* args[]);
