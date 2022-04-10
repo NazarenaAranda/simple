@@ -17,7 +17,7 @@ int _path(char **comm)
 			return (0);
 		}
 		free(com_path);
-		valor = strtok(NULL, ":");
+		valor = strtok(NULL, ":\t");
 	}
 	free(path);
 	return (1);
