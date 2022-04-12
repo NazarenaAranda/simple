@@ -1,10 +1,10 @@
 #include "main.h"
 /**
- * errmessage: mensaje de error cuando no exite el comando
+ * errmessage - mensaje de error cuando no exite el comando
  * @c: comando que pone el usuario
  * @p: nombre del programa
  * @i: número de comandos del usuario durante el programa
- * Retorno: 0
+ * Return: ds
  */
 void errmessage(char **c, char *p, int i)
 {

@@ -4,7 +4,7 @@
  * findcommand - stat para encontrar un archivo en path
  * @head: cabeza de linked list
  * @commandinput: comando que ingreso el usuario para verificar el path
- * Retorno: puntero a path
+ * Return: puntero a path
  */
 char *findcommand(PDIRECT *head, char *commandinput)
 {

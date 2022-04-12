@@ -10,17 +10,8 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #include <signal.h>
-<<<<<<< HEAD
-<<<<<<< HEAD
-#include <sys/types.h>
 
-#define TOKEN_LIMIT 1024
-=======
 #include <stddef.h>
-#include <sys/types.h>
->>>>>>> 5249e5fc8c23e11f6a99ea99aa3d9af0b85caada
-=======
->>>>>>> bb527f2063af6672be06dfab317416a57fe0c48b
 
 /**
  *struct direc - estructura de Linkedlist (PATH)

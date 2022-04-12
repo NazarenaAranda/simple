@@ -2,7 +2,7 @@
 
 /**
  * linkedpath - linked list del PATH
- * Return: head 
+ * Return: head
  */
 PDIRECT *linkedpath(void)
 {
