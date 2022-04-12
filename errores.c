@@ -4,7 +4,7 @@
  * @c: comando que pone el usuario
  * @p: nombre del programa
  * @i: número de comandos del usuario durante el programa
- * Return: ds
+ * Return: 0
  */
 void errmessage(char **c, char *p, int i)
 {
@@ -26,6 +26,7 @@ void errmessage(char **c, char *p, int i)
  * @c: comando del usuario
  * @p: nombre del programa
  * @i: numero de comandos del usuario
+ * Return: g
  */
 void CDerrmessage(char **c, char *p, int i)
 {

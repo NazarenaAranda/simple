@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * findcommand - stat para encontrar un archivo en path
+ * *findcommand - stat para encontrar un archivo en path
  * @head: cabeza de linked list
  * @commandinput: comando que ingreso el usuario para verificar el path
  * Return: puntero a path
