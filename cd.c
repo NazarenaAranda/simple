@@ -4,7 +4,7 @@
  * changedir - cambiar directorio
  * @p: comandos del usurio
  * @predirect: directorio anterior
- * Return: 0
+ * Return: 0hjk
  */
 int changedir(char **p, CHDIRECT *predirect)
 {
