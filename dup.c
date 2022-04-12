@@ -2,7 +2,7 @@
 
 /**
  *_strdup - duplicate string
- *@jeje: string a duplicate
+ *@strc: string a duplicate
  *Return: duplicated string
  */
 char *_strdup(char *strc)
