@@ -9,7 +9,7 @@
 int main(int argc __attribute__ ((unused)), char **argv)
 {
 	char *strinput = NULL, *token = NULL, **storetoken = NULL, *delim = "\n ";
-	char prompt[] = "#cisfun$ ", *cmdinpath = NULL;
+	char prompt[] = "($) ", *cmdinpath = NULL;
 	int readnum, i = 0, errnum = 0, size = 0, count = 0, CDvalue = 0;
 	int  cerrnum = 0;
 	size_t len = 0;

@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * findcommand - stat to find a file in the path
- * @head: head linked list of path directories
- * @commandinput: user entered command to check in the path
- * Return: pointer to full path;
+ * findcommand - stat para encontrar un archivo en path
+ * @head: cabeza de linked list
+ * @commandinput: comando que ingreso el usuario para verificar el path
+ * Retorno: puntero a path
  */
 char *findcommand(PDIRECT *head, char *commandinput)
 {

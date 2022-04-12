@@ -12,9 +12,9 @@
 #include <signal.h>
 
 /**
- *struct direc - structure for the implementation of Linkedlist (PATH)
- *@strc: directory path
- *@next: pointer a next node
+ *struct direc - estructura de Linkedlist (PATH)
+ *@strc: directorio path
+ *@next: siguiente nodo
  */
 typedef struct direc
 {
@@ -23,9 +23,9 @@ typedef struct direc
 } PDIRECT;
 
 /**
- *struct chdirect - structure for function cd
- *@strc: directory path
- *@cde: indicated to cd calling
+ *struct chdirect - estructura para cd
+ *@strc: directorio path
+ *@cde: llamar a cd
  */
 typedef struct chdirect
 {

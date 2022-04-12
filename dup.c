@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- *_strdup - duplicate string
- *@strc: string a duplicate
- *Return: duplicated string
+ *_strdup - duplicar string
+ *@strc: string que se va a duplicar
+ *Return: string duplicada
  */
 char *_strdup(char *strc)
 {

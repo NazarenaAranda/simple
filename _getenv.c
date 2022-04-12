@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * *_getenv - returns an environmental variable value
- * @name: key to access the env value
- * Return: pointer to the value
+ * *_getenv - valor de environ
+ * @name: aceder al env
+ * Return: puntero
  */
 char *_getenv(const char *name)
 {

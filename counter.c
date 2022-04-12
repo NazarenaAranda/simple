@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- *counter - count the namber of tokens
- *@strc: the string
- *Return: the namber of tokens or 0
+ *counter - cuenta los tokens
+ *@strc: string
+ *Return: tokens o 0
  */
 int counter(char *strc)
 {

@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * _itoa - int to ascii
- * @a: number
+ * _itoa - entero a ascii
+ * @a: num
  * @c: string
  */
 void _itoa(int a, char *c)

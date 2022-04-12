@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * checkenv - checks to see if the token is the env
- * @p: user supplies command line arguments
- * Return: returns 1 if user entered the command; zero otherwise
+ * checkenv - ver si el token es env
+ * @p: argumentos de usuario
+ * Return: si el usuario ingresó el comando devuelve 1
+ * sino 0
  */
 int checkenv(char **p)
 {

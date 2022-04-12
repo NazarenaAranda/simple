@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * checkexit - implements exit builtin and exits with supplied error #
- * @token: user command strings
- * Return: If user entered exit, returns entered errnum
+ * checkexit - implementa exit incorporado y sale con errores #
+ *@token: cadenas de comandos de usuario
+ * Return: Si el usuario ingresó exit, devuelve ingresó errnum
  */
 int checkexit(char **token)
 {
@@ -25,14 +25,15 @@ int checkexit(char **token)
 }
 
 /**
- * __exit - free all malloced memory
- * @errnum: exits with this error number
- * @p: heap array of char pointers used to store comands
- * @getline: pointer to malloc space from getline function call
- * @head: head of linked list
- * @fc: malloced string path/to/file from PATH function
- * @predirect: malloc string of previous directory
+ * __exit - memoria libre
+ * @errnum: sale con número de error
+ * @p: almacenar comandos
+ * @getline: puntero a malloc desde la función getline
+ * @head: cabeza de lista enlazada
+ * @fc: malloc de la función PATH
+ * @predirect: directorio anterior malloc
  */
+
 void __exit(int errnum, char **p, char *getline, PDIRECT *head, char *fc,
 	    char *predirect)
 {

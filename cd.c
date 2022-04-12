@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * changedir - changes directory
- * @p: p user entered commands
- * @predirect: previous directory
- * Return: zdkmadmcp
+ * changedir - cambiar directorio
+ * @p: comandos del usurio
+ * @predirect: directorio anterior
+ * Return: 0
  */
 int changedir(char **p, CHDIRECT *predirect)
 {

@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- *_str_token - tokenizes a string
+ *_str_token - tokenizar una string
  *@strc: string a tokenizar
- *@d: deliminator a sstring
+ *@d: delimitador a sstring
  *Return: token or 0
  */
 char *_str_token(char *strc, char *d)

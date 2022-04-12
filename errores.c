@@ -1,11 +1,10 @@
 #include "main.h"
-
 /**
- * errmessage - prints error message when command not found
- * @c: user command
- * @p: pointer to name of the program
- * @i: counter, indicating number of user commands during life of program
- *Return: 0
+ * errmessage: mensaje de error cuando no exite el comando
+ * @c: comando que pone el usuario
+ * @p: nombre del programa
+ * @i: número de comandos del usuario durante el programa
+ * Retorno: 0
  */
 void errmessage(char **c, char *p, int i)
 {
@@ -23,10 +22,10 @@ void errmessage(char **c, char *p, int i)
 	free(t);
 }
 /**
- * CDerrmessage  - prints error for CD
- * @c: user commands
- * @p: pointer to name of the program
- * @i: counter, indicating number of user commands during life of program
+ * CDerrmessage  - error de cd
+ * @c: comando del usuario
+ * @p: nombre del programa
+ * @i: numero de comandos del usuario
  */
 void CDerrmessage(char **c, char *p, int i)
 {

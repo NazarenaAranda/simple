@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * linkedpath - linked list of the PATH
- * Return: head of the linked list
+ * linkedpath - linked list del PATH
+ * Return: head 
  */
 PDIRECT *linkedpath(void)
 {
