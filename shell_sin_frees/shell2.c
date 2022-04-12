@@ -1,4 +1,20 @@
+<<<<<<< HEAD
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/wait.h>
+#include <signal.h>
+#include <sys/types.h>
+
+#define TOKEN_LIMIT 1024 //los token son los argumentos que van despues del espacio
+
+void cd(char* args[]);
+void executeCommand(char* args[]);
+
+=======
 #include "main.h"
+>>>>>>> 5249e5fc8c23e11f6a99ea99aa3d9af0b85caada
 
 int main()
 {
