@@ -1,24 +1,37 @@
 #include "main.h"
-int _path(char **comm)
-{
-	struct stat buff;
-	char *valor, *path, *com_path;
 
-	path = _getenv("PATH");
-	valor = strtok(path, ":");
-	while (valor != NULL)
+/**
+ * linkedpath - linked list del PATH
+ * Return: head 
+ */
+PDIRECT *linkedpath(void)
+{
+	char *path, *token = NULL, *delim = ":";
+	PDIRECT *head, *temp, *temp2;
+
+	head = malloc(sizeof(PDIRECT));
+	if (!head)
+		return (NULL);
+	head->next = NULL;
+
+	path = _strdup(_getenv("PATH"));
+
+	token = _str_token(path, delim);
+	head->strc = token;
+
+	temp = head;
+	while (token != NULL)
 	{
-		com_path = str_cat(*comm, valor);
-		if (stat(com_path, &buff) == 0)
+		token = _str_token(NULL, delim);
+		if (token != NULL)
 		{
-			*comm = strdup(com_path);
-			free(com_path);
-			free(path);
-			return (0);
+			temp2 = malloc(sizeof(PDIRECT));
+			temp2->strc = token;
+			temp2->next = NULL;
+			temp->next = temp2;
+			temp = temp2;
 		}
-		free(com_path);
-		valor = strtok(NULL, ":");
 	}
 	free(path);
-	return (1);
+	return (head);
 }
